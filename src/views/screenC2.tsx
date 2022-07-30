@@ -3,13 +3,15 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import ArrowLeft from '../components/arrowleft';
 import Loading from '../components/loading';
+import { SessionInterface } from '../interfaces/interfaces';
 
-function ScreenC2() {
+function ScreenC2(props: SessionInterface) {
   const location: any = useLocation();
   const navigate = useNavigate();
 
   const [clickButton, setClickButton] = useState(false);
-  const [timeComplete, setTimeComplete] = useState(false);
+  const [runNavigation, setRunNavigation] = useState(false);
+  const [sessionId, setSessionId] = useState(props.sessionId);
 
   function ClickHandle() {
     setClickButton(true);
@@ -23,7 +25,7 @@ function ScreenC2() {
   }, [clickButton]);
 
   useEffect(() => {
-    if (timeComplete) {
+    if (runNavigation) {
       navigate('../screenD', {
         replace: true,
         state: {
@@ -33,15 +35,23 @@ function ScreenC2() {
         }
       });
     }
-  }, [timeComplete]);
+  }, [runNavigation]);
 
   useEffect(() => {
     if (!location?.state?.back) {
       setTimeout(() => {
-        setTimeComplete(true);
+        setRunNavigation(true);
       }, 3000);
     }
-  }, [location, timeComplete]);
+  }, []);
+
+  useEffect(() => {
+    setSessionId(props.sessionId);
+
+    if (sessionId !== props.sessionId && !location?.state?.back) {
+      setRunNavigation(true);
+    }
+  }, [props.sessionId]);
 
   return (
     <div id="screenC2">

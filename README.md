@@ -12,7 +12,7 @@ your app is simply run also volumn is created if you want any change in project
 
 #### Runs the app in terminal
 
-### .env
+### `.env`
 
 create .env file and add environment this.\
 REACT_APP_SERVER_URL=http://localhost:8080/

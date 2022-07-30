@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import '../css/style.css';
 import loginService from '../services/login.service';
 import { notifyError } from '../components/toast';
 import ScreenA from './screenA';
@@ -12,11 +13,11 @@ import ScreenB3 from './screenB3';
 import ScreenC1 from './screenC1';
 import ScreenC2 from './screenC2';
 import ScreenD from './screenD';
-import '../css/style.css';
 
 function Screen() {
-  const [sessionId, setSessionId] = useState('');
   const location = useLocation();
+
+  const [sessionId, setSessionId] = useState('');
 
   useEffect(() => {
     async function login() {
@@ -39,8 +40,8 @@ function Screen() {
         <Route path="/screenB1" element={<ScreenB1 />} />
         <Route path="/screenB2" element={<ScreenB2 />} />
         <Route path="/screenB3" element={<ScreenB3 />} />
-        <Route path="/screenC1" element={<ScreenC1 />} />
-        <Route path="/screenC2" element={<ScreenC2 />} />
+        <Route path="/screenC1" element={<ScreenC1 sessionId={sessionId} />} />
+        <Route path="/screenC2" element={<ScreenC2 sessionId={sessionId} />} />
         <Route path="/screenD" element={<ScreenD />} />
       </Routes>
       <ToastContainer />
