@@ -19,12 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `node server.js x y u v a b`
 
-x - override for rLogin delay
-y - override for rLogin success
-u - override for rFetchExperiments delay
-v - override for rFetchExperiments success
-a - override for rSubmitSelection delay
-b - override for rSubmitSelection success
+x - override for rLogin delay\
+y - override for rLogin success\
+u - override for rFetchExperiments delay\
+v - override for rFetchExperiments success\
+a - override for rSubmitSelection delay\
+b - override for rSubmitSelection success\
 
 Example: node server.js 3 false 15 true 4 false
 
