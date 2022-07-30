@@ -12,6 +12,11 @@ your app is simply run also volumn is created if you want any change in project
 
 #### Runs the app in terminal
 
+### .env
+
+create .env file and add environment this.\
+REACT_APP_SERVER_URL=http://localhost:8080/
+
 ### `npm start`
 
 Runs the front-end app in the development mode.\
