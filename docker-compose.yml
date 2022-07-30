@@ -3,7 +3,7 @@ version: "3.7"
 services:
   backend:
     image: node:14.19.1
-    command: sh -c "npm i && node server.js 3 true 3 true 3 true"
+    command: sh -c "npm install && node server.js 3 true 3 true 3 true"
     ports:
       - 8080:8080
     working_dir: /back
@@ -12,7 +12,7 @@ services:
 
   frontend:
     image: node:14.19.1
-    command: sh -c "npm run lint:fix && npm i && npm start"
+    command: sh -c "npm install && npm run lint:fix && npm start"
     ports:
       - 3000:3000
     working_dir: /front
@@ -22,7 +22,6 @@ services:
       - ./:/front
     depends_on:
       - backend
-
 
 volumes:
   dynamic-navigation:
