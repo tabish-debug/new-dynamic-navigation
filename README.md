@@ -6,7 +6,7 @@ Old Dynamic Navigation Repository [Dynamic Navigation](https://github.com/tabish
 
 If you have docker. In project directory, you can run:
 
-### docker compose up -d
+### `docker compose up -d`
 
 your app is simply run also volumn is created if you want any change in project
 
