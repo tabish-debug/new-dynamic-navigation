@@ -4,7 +4,7 @@ Old Dynamic Navigation Repository [Dynamic Navigation](https://github.com/tabish
 
 ## Available Scripts
 
-If you have docker in project directory, you can run:
+If you have docker. In project directory, you can run:
 
 ### docker compose up -d
 
@@ -24,7 +24,7 @@ y - override for rLogin success\
 u - override for rFetchExperiments delay\
 v - override for rFetchExperiments success\
 a - override for rSubmitSelection delay\
-b - override for rSubmitSelection success\
+b - override for rSubmitSelection success
 
 Example: node server.js 3 false 15 true 4 false
 
