@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  backend:
+    image: node:14.19.1
+    command: sh -c "npm i && node server.js 3 true 3 true 3 true"
+    ports:
+      - 8080:8080
+    working_dir: /back
+    volumes:
+      - ./server:/back
+
+  frontend:
+    image: node:14.19.1
+    command: sh -c "npm run lint:fix && npm i && npm start"
+    ports:
+      - 3000:3000
+    working_dir: /front
+    environment:
+      - REACT_APP_SERVER_URL=http://localhost:8080/
+    volumes:
+      - ./:/front
+    depends_on:
+      - backend
+
+
+volumes:
+  dynamic-navigation:
