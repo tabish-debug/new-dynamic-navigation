@@ -1,4 +1,4 @@
-# New Dynamic Navigation
+# `New Dynamic Navigation`
 
 Old Dynamic Navigation Repository [Dynamic Navigation](https://github.com/tabish-debug/dynamic-navigation).
 
